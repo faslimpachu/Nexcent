@@ -1,5 +1,5 @@
 import React from 'react'
-import heroimg from '../../src/assets/img/Illustration.png'
+import heroimg from '../../assets/img/Illustration.png'
 import { HeroImg, MainContainer } from './HeroSectionStyle'
 
 function HeroSection() {

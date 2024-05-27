@@ -1,6 +1,6 @@
-import HeroSection from "./HeroSection/HeroSection";
 import DesignSite from "./components/DesignSite/DesignSite";
 import HelpingSection from "./components/HelpingSection/HelpingSection";
+import HeroSection from "./components/HeroSection/HeroSection";
 import ManageCommunity from "./components/ManageCommunity/ManageCommunity";
 import Navbar from "./components/Navbar/Navbar";
 import OurClients from "./components/OurClients/OurClients";
