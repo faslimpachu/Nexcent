@@ -26,6 +26,8 @@ function OurClients() {
         <ClientsLogos src={clientimg5} alt='Logo 5' />
         <ClientsLogos src={clientimg6} alt='Logo 6' />
         <ClientsLogos src={clientimg7} alt='Logo 7' />
+     
+   
       </LogoDiv>
     </MainDIv>
   );

@@ -54,19 +54,18 @@ gap: 125px;
 padding: 20px;
 margin-top: 20px;
 
+
 @media screen and (max-width: 1177px) {
    gap: 80px;
 
     
 }
-@media screen and (max-width: 1017px) {
-   gap: 20px;
-   flex-direction: column;
-   padding: 0px;
-   margin-top: 20px;
 
-    
-}
+@media screen and (max-width: 915px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
 @media screen and (max-width: 322px){
     gap: 5px;
 

@@ -61,7 +61,7 @@ input{
 @media screen and (max-width: 427px) {
    flex-direction: column;
    text-align: center;
-   gap: 50px;
+   gap: 20px;
    margin-right: 50px;
 
    h3{
@@ -70,6 +70,7 @@ input{
    form{
     margin-left: 30px;
    }
+   
 
 }
 

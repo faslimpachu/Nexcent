@@ -83,7 +83,7 @@ export const HamburgerImg = styled.img`
 `;
 
 export const ButtonItem = styled.button`
-    margin-right: 30px;
+    padding-left: 10px;
     background-color: ${props => props.primary ? '#4CAF4F' : 'white'};
     color: ${props => props.primary ? 'white' : '#4CAF4F'};
     padding: 10px 15px;
