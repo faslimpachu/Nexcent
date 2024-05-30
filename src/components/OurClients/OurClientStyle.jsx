@@ -12,7 +12,7 @@ export const MainDIv = styled.div`
         margin: 0px;
         padding: 10px;
         font-size: 40px;
-        color: #4D4D4D;
+        color: #000000;
     }
     p{
         margin: 0px;
