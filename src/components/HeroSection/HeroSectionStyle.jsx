@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
     h1{
         font-size: 60px;
         font-weight: 600;
-        color: #4D4D4D;
+        color: #000000;
         margin-bottom: 0px;
         
        
@@ -22,7 +22,7 @@ export const MainContainer = styled.div`
     }
 
     p{
-        color: #717171;
+        color: #000000;
         font-weight: 400;
         font-size: 16px;
     }
