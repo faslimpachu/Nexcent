@@ -1,10 +1,16 @@
-import React from 'react'
-import blog1 from '../../assets/img/news (1).png'
-import blog2 from '../../assets/img/news (2).png'
-import blog3 from '../../assets/img/news (3).png'
-import { BlogImage, Button, DivCard, FlexDiv, MainDiv, MainDivText, PtagDiv, SUbDiv } from './BlogStyle'
+import React from 'react';
+import blog1 from '../../assets/img/news (1).png';
+import blog2 from '../../assets/img/news (2).png';
+import blog3 from '../../assets/img/news (3).png';
+import { BlogImage, Button, DivCard, FlexDiv, MainDiv, MainDivText, PtagDiv, SUbDiv } from './BlogStyle';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 function Blog() {
+    const { ref: card1Ref, inView: card1InView } = useInView({ triggerOnce: true });
+    const { ref: card2Ref, inView: card2InView } = useInView({ triggerOnce: true });
+    const { ref: card3Ref, inView: card3InView } = useInView({ triggerOnce: true });
+
     return (
         <MainDiv>
             <SUbDiv>
@@ -19,46 +25,64 @@ function Blog() {
                     </PtagDiv>
                 </div>
                 <FlexDiv>
-                    <DivCard>
-                        <BlogImage src={blog1} alt='image' />
-                        <MainDivText>
-                            <PtagDiv>
-                                <p>Creating Streamlined Safeguarding Processes with OneRen</p>
-                            </PtagDiv>
-                            <div className="buttondiv">
-                                <Button>read more</Button>
-                            </div>
-                        </MainDivText>
-
-                    </DivCard>
-                    <DivCard>
-                        <BlogImage src={blog1} alt='image' />
-                        <div>
-                            <PtagDiv>
-                                <p>Creating Streamlined Safeguarding Processes with OneRen</p>
-                            </PtagDiv>
-                            <div className="buttondiv">
-                                <Button>read more</Button>
-                            </div>
-                        </div>
-
-                    </DivCard>
-                    <DivCard>
-                        <BlogImage src={blog1} alt='image' />
-                        <div>
-                            <PtagDiv>
-                                <p>Creating Streamlined Safeguarding Processes with OneRen</p>
-                            </PtagDiv>
-                            <div className="buttondiv">
-                                <Button>read more</Button>
-                            </div>
-                        </div>
-
-                    </DivCard>
+                    <motion.div
+                        ref={card1Ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={card1InView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <DivCard>
+                            <BlogImage src={blog1} alt='image' />
+                            <MainDivText>
+                                <PtagDiv>
+                                    <p>Creating Streamlined Safeguarding Processes with OneRen</p>
+                                </PtagDiv>
+                                <div className="buttondiv">
+                                    <Button>read more</Button>
+                                </div>
+                            </MainDivText>
+                        </DivCard>
+                    </motion.div>
+                    <motion.div
+                        ref={card2Ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={card2InView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <DivCard>
+                            <BlogImage src={blog2} alt='image' />
+                            <MainDivText>
+                                <PtagDiv>
+                                    <p>Creating Streamlined Safeguarding Processes with OneRen</p>
+                                </PtagDiv>
+                                <div className="buttondiv">
+                                    <Button>read more</Button>
+                                </div>
+                            </MainDivText>
+                        </DivCard>
+                    </motion.div>
+                    <motion.div
+                        ref={card3Ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={card3InView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <DivCard>
+                            <BlogImage src={blog3} alt='image' />
+                            <MainDivText>
+                                <PtagDiv>
+                                    <p>Creating Streamlined Safeguarding Processes with OneRen</p>
+                                </PtagDiv>
+                                <div className="buttondiv">
+                                    <Button>read more</Button>
+                                </div>
+                            </MainDivText>
+                        </DivCard>
+                    </motion.div>
                 </FlexDiv>
             </SUbDiv>
         </MainDiv>
     )
 }
 
-export default Blog
+export default Blog;

@@ -8,26 +8,43 @@ import clientimg6 from '../../assets/img/brandlogo/Logo (6).png';
 import clientimg7 from '../../assets/img/brandlogo/Logo (7).png';
 
 import { ClientsLogos, LogoDiv, MainDIv } from './OurClientStyle';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 function OurClients() {
+  const { ref: titleRef, inView: titleInView } = useInView({ triggerOnce: true });
+  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true });
+  const { ref: logosRef, inView: logosInView } = useInView({ triggerOnce: true });
+
   return (
     <MainDIv>
-      <div>
+      <motion.div
+        ref={titleRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={titleInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+      >
         <h3>Our Clients</h3>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        ref={textRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={textInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <p>We have been working with some Fortune 500+ clients</p>
-      </div>
-      <LogoDiv>
-        <ClientsLogos src={clientimg1} alt='Logo 1' />
-        <ClientsLogos src={clientimg2} alt='Logo 2' />
-        <ClientsLogos src={clientimg3} alt='Logo 3' />
-        <ClientsLogos src={clientimg4} alt='Logo 4' />
-        <ClientsLogos src={clientimg5} alt='Logo 5' />
-        <ClientsLogos src={clientimg6} alt='Logo 6' />
-        <ClientsLogos src={clientimg7} alt='Logo 7' />
-     
-   
+      </motion.div>
+      <LogoDiv ref={logosRef}>
+        {[clientimg1, clientimg2, clientimg3, clientimg4, clientimg5, clientimg6, clientimg7].map((img, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={logosInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+          >
+            <ClientsLogos src={img} alt={`Logo ${index + 1}`} />
+          </motion.div>
+        ))}
       </LogoDiv>
     </MainDIv>
   );

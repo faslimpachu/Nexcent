@@ -16,6 +16,7 @@ export const DivUl = styled.ul`
     display: flex;
     align-items: center;
     gap: 25px;
+    cursor: pointer;
 
    
 

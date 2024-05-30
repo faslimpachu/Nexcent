@@ -17,6 +17,7 @@ export const DivmainText = styled.div`
         margin-bottom: 0;
         font-size: 36px;
         font-weight: 600;
+        padding: 10px;
         
     }
 
@@ -26,7 +27,7 @@ export const DivmainText = styled.div`
         }
         
     }
-    @media screen and (max-width: 350px) {
+    @media screen and (max-width: 390px) {
         h2{
             font-size: 20px;
             padding: 10px;
